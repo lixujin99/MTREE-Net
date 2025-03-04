@@ -13,7 +13,7 @@ Follow the steps below to prepare the virtual environment.
 
 Create and activate the environment:
 ```shell
-conda create -n mtreenet python=3.9
+conda create -n mtreenet python=3.10
 conda activate mtreenet
 ```
 
@@ -29,10 +29,61 @@ pip install -r requirements.txt
 
 We designed and implemented three independent multi-class target RSVP tasks to collect EEG and EM data, and establish the “NeuBCI Multi-Class Target Detection RSVP EEG and EM Dataset”. Our collected dataset and corresponding data descriptions are released at [https://doi.org/10.57760/sciencedb.17705](https://doi.org/10.57760/sciencedb.17705).
 
+Each participant's **electroencephalogram (EEG) data** are stored in `.npz` files, and **eye movement (EM) data** are stored in `.mat` files. Each EEG and EM file with the same file name corresponds to the same participant and block. Below is the dataset structure:
+
+| Task | Modality | File Format | File Naming | Data Shape | Label Description |
+|------|----------|-------------|-------------|------------|-------------------|
+| A    | EEG      | `.npz`       | `S1_1.npz` ~ `S43_5.npz` | `(trials × channels × time)` | `0`: non-target, `1`: target-1, `2`: target-2 |
+| A    | EM       | `.mat`       | `S1_1.mat` ~ `S43_5.mat` | `(trials × time × components)` | `0`: non-target, `1`: target-1, `2`: target-2 |
+| B    | EEG      | `.npz`       | `S1_1.npz` ~ `S43_5.npz` | `(trials × channels × time)` | `0`: non-target, `1`: target-1, `2`: target-2 |
+| B    | EM       | `.mat`       | `S1_1.mat` ~ `S43_5.mat` | `(trials × time × components)` | `0`: non-target, `1`: target-1, `2`: target-2 |
+| C    | EEG      | `.npz`       | `S1_1.npz` ~ `S43_5.npz` | `(trials × channels × time)` | `0`: non-target, `1`: target-1, `2`: target-2 |
+| C    | EM       | `.mat`       | `S1_1.mat` ~ `S43_5.mat` | `(trials × time × components)` | `0`: non-target, `1`: target-1, `2`: target-2 |
+
+```
+/data 
+┣ 📂 TaskA 
+┃   ┣ 📂 EEG 
+┃   ┃   ┣ 📜 S1_1.npz 
+┃   ┃   ┣ 📜 S1_2.npz 
+┃   ┃   ┣ 📜 ... 
+┃   ┃   ┣ 📜 S43_5.npz 
+┃   ┣ 📂 EM 
+┃   ┃   ┣ 📜 S1_1.mat 
+┃   ┃   ┣ 📜 S1_2.mat 
+┃   ┃   ┣ 📜 ... 
+┃   ┃   ┣ 📜 S43_5.mat
+
+┣ 📂 TaskB 
+┃   ┣ 📂 EEG 
+┃   ┃   ┣ 📜 S1_1.npz 
+┃   ┃   ┣ 📜 S1_2.npz 
+┃   ┃   ┣ 📜 ... 
+┃   ┃   ┣ 📜 S43_5.npz 
+┃   ┣ 📂 EM 
+┃   ┃   ┣ 📜 S1_1.mat 
+┃   ┃   ┣ 📜 S1_2.mat 
+┃   ┃   ┣ 📜 ... 
+┃   ┃   ┣ 📜 S43_5.mat
+
+┣ 📂 TaskC 
+┃   ┣ 📂 EEG 
+┃   ┃   ┣ 📜 S1_1.npz 
+┃   ┃   ┣ 📜 S1_2.npz 
+┃   ┃   ┣ 📜 ... 
+┃   ┃   ┣ 📜 S43_5.npz 
+┃   ┣ 📂 EM 
+┃   ┃   ┣ 📜 S1_1.mat 
+┃   ┃   ┣ 📜 S1_2.mat 
+┃   ┃   ┣ 📜 ... 
+┃   ┃   ┣ 📜 S43_5.mat
+```
+
 ### 2.2&nbsp; Data Acquisition
 
-The EEG data are recorded using a SynAmp2 Amplifier (NeuroScan, Australia) with a 64-channel Ag/AgCl electrode cap following the international 10-20 system. The electrode impedances are maintained below 10 kΩ, with AFz serving as
-the ground electrode and the vertex as the reference. Data are sampled at 1000 Hz. Both EEG and eye movement signals are recorded simultaneously during the experiment. Bilateral eye movements including pupil pixel area, horizontal (X), and vertical (Y) gaze coordinates are recorded using an EyeLink 1000 plus system (SR Research) at the same sampling rate of 1000 Hz. A chin rest is used to minimize head movement while maintaining attention on the target images. Before data collection, eye tracking is calibrated using a 9-point grid, with maximum and average errors below 1◦ and 0.5◦, respectively.
+>- The EEG data are recorded using a SynAmp2 Amplifier (NeuroScan, Australia) with a 64-channel Ag/AgCl electrode cap following the international 10-20 system. The electrode impedances are maintained below 10 kΩ, with AFz serving as the ground electrode and the vertex as the reference. Data are sampled at 1000 Hz. Both EEG and eye movement signals are recorded simultaneously during the experiment. 
+
+>- Bilateral eye movements including pupil pixel area, horizontal (X), and vertical (Y) gaze coordinates are recorded using an EyeLink 1000 plus system (SR Research) at the same sampling rate of 1000 Hz. A chin rest is used to minimize head movement while maintaining attention on the target images. Before data collection, eye tracking is calibrated using a 9-point grid, with maximum and average errors below 1◦ and 0.5◦, respectively.
 
 
 ### 2.3&nbsp; Data Preprocessing
