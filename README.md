@@ -23,13 +23,17 @@ pip install -r requirements.txt
 ```
 
 
-## 2&nbsp; Experiment
+## 2&nbsp; Data
 
-### 2.1&nbsp; Data Acquisition
+### 2.1&nbsp; Dataset
+
+We designed and implemented three independent multi-class target RSVP tasks to collect EEG and EM data, and establish the “NeuBCI Multi-Class Target Detection RSVP EEG and EM Dataset”, which is available at [https://doi.org/10.57760/sciencedb.17705](https://doi.org/10.57760/sciencedb.17705).
+
+### 2.2&nbsp; Data Acquisition
 
 The data acquisition and preprocessing procedures are consistent for all three tasks. EEG data are recorded using the SynAmp2 system (Neuroscan, Australia) with 64-channel Ag/AgCl electrodes placed according to the international 10/20 system, with a sampling rate of 1000 Hz. All the electrodes with an impedance of 10 kΩ or lower are referenced to the vertex and grounded on the AFz channel.
 
-### 2.2&nbsp; Data Preprocessing
+### 2.3&nbsp; Data Preprocessing
 
 The collected EEG data are downsampled to 250 Hz. Subsequently, a linear phase 3-order Butterworth filter with a bandpass ranging from 0.5 to 15 Hz is applied to the signal to eliminate slow drift and high-frequency noise and prevent delay distortions. Next, the preprocessed data from each block are segmented into EEG trials. Each trial consists of 1-second EEG data starting from the stimulation onset to 1000 milliseconds (0 s to 1 s) after the stimulation onset. For each trial, data are normalized to zero mean and variance one. The subsequent analysis and classification of EEG signals rely on these segmented EEG trials (samples).
 
