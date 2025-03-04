@@ -27,12 +27,12 @@ pip install -r requirements.txt
 
 ### 2.1&nbsp; Dataset
 
-We designed and implemented three independent multi-class target RSVP tasks to collect EEG and EM data, and establish the “NeuBCI Multi-Class Target Detection RSVP EEG and EM Dataset”. The dataset and corresponding data descriptions are available at [https://doi.org/10.57760/sciencedb.17705](https://doi.org/10.57760/sciencedb.17705).
+We designed and implemented three independent multi-class target RSVP tasks to collect EEG and EM data, and establish the “NeuBCI Multi-Class Target Detection RSVP EEG and EM Dataset”. Our collected dataset and corresponding data descriptions are released at [https://doi.org/10.57760/sciencedb.17705](https://doi.org/10.57760/sciencedb.17705).
 
 ### 2.2&nbsp; Data Acquisition
 
 The EEG data are recorded using a SynAmp2 Amplifier (NeuroScan, Australia) with a 64-channel Ag/AgCl electrode cap following the international 10-20 system. The electrode impedances are maintained below 10 kΩ, with AFz serving as
-the ground electrode and the vertex as the reference. Data are sampled at 1000 Hz. Both EEG and eye movement signals are recorded simultaneously during the experiment. Bilateral eye movements including pupil pixel area, horizontal (X), and vertical (Y) gaze coordinates are recorded using an EyeLink 1000 plus system (SR Research) at the same sampling rate of 1000 Hz. A chin rest is used to minimize head movement while maintaining attention on the target images. Before data collection, eye tracking is calibrated using a 9-point grid, with maximum and average errors below 1◦ and 0.5◦, respectively.
+the ground electrode and the vertex as the reference. Data are sampled at 1000 Hz. Both EEG and eye movement signals are recorded simultaneously during the experiment. Bilateral eye movements including pupil pixel area, horizontal (X), and vertical (Y) gaze coordinates are recorded using an EyeLink 1000 plus system (SR Research) at the same sampling rate of 1000 Hz. A chin rest is used to minimize head movement while maintaining attention on the target images. Before data collection, eye tracking is calibrated using a 9-point grid, with maximum and average errors below 1◦ and 0.5◦, respectively.
 
 
 ### 2.3&nbsp; Data Preprocessing
