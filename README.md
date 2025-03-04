@@ -4,7 +4,7 @@ The official implementation of **Exploring EEG and Eye Movement Fusion for Multi
 
 ![alt text](figure/Model_framework.png)
 
-The MTREE-Net model consists of a two-stream feature extractor, a dual-complementary module (DCM), a contribution-guided reweighting module (CG-RM), and a hierarchical self-distillation module (HSM). The network employs several loss functions: intra-modal triplet cross-entropy losses (\(\mathcal{L}_{intra-eeg}\) and Lintra-em), binary cross-entropy loss (Lbce), triplet cross-entropy loss (Lce), contribution-guided loss with L1-norm (Lcg), and self-distillation loss using symmetric Kullback-Leibler divergence (Lsd). The output logits T, N, T1, and T2 correspond to target, non-target, target-1, and target-2 classes, respectively.
+The MTREE-Net model consists of a two-stream feature extractor, a dual-complementary module (DCM), a contribution-guided reweighting module (CG-RM), and a hierarchical self-distillation module (HSM). The network employs several loss functions: intra-modal triplet cross-entropy losses (![Intra-modal loss](https://latex.codecogs.com/svg.latex?\mathcal{L}_{\text{intra-eeg}},\quad\mathcal{L}_{\text{intra-em}})), binary cross-entropy loss (![Binary cross-entropy loss](https://latex.codecogs.com/svg.latex?\mathcal{L}_{\text{bce}})), triplet cross-entropy loss (![Triplet loss](https://latex.codecogs.com/svg.latex?\mathcal{L}_{\text{ce}})), contribution-guided loss with L1-norm (![Contribution-guided loss](https://latex.codecogs.com/svg.latex?\mathcal{L}_{\text{cg}})), self-distillation loss using symmetric Kullback-Leibler divergence (![Self-distillation loss](https://latex.codecogs.com/svg.latex?\mathcal{L}_{\text{sd}})). The output logits **T**, **N**, **T1**, and **T2** correspond to **target**, **non-target**, **target-1**, and **target-2** classes, respectively.
 
 
 ## 1&nbsp; Installation
@@ -13,8 +13,8 @@ Follow the steps below to prepare the virtual environment.
 
 Create and activate the environment:
 ```shell
-conda create -n tsformer python=3.9
-conda activate tsformer
+conda create -n mtreenet python=3.9
+conda activate mtreenet
 ```
 
 Install dependencies:
