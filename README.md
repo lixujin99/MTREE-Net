@@ -1,6 +1,6 @@
 # MTREE-Net
 
-The official implementation of **Exploring EEG and Eye Movement Fusion for Multi-Class Target RSVP-BCI**.
+The official implementation of **[Exploring EEG and Eye Movement Fusion for Multi-Class Target RSVP-BCI](https://doi.org/10.1016/j.inffus.2025.103135)**.
 
 ![alt text](figure/Model_framework.png)
 
