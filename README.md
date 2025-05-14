@@ -97,7 +97,7 @@ The MTREE-Net is optimized using the Adam optimizer. The model assessment follow
 a secondary 5-fold cross-validation is applied to subdivide the training data into training and validation sets.
 
 ```bash
-python MTREE-Net/main.py
+python /MTREE-Net/main.py
 ```
 
 ## 4&nbsp; Cite
