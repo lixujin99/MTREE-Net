@@ -106,9 +106,12 @@ If you find this code or our MTREE-Net paper helpful for your research, please c
 
 ```bibtex
 @article{li2025exploring,
-  title={Exploring EEG and Eye Movement Fusion for Multi-Class Target RSVP-BCI},
+  title={Exploring EEG and eye movement fusion for multi-class target RSVP-BCI},
   author={Li, Xujin and Wei, Wei and Zhao, Kun and Mao, Jiayu and Lu, Yizhuo and Qiu, Shuang and He, Huiguang},
-  journal={arXiv preprint arXiv:2501.03596},
-  year={2025}
+  journal={Information Fusion},
+  volume={121},
+  pages={103135},
+  year={2025},
+  publisher={Elsevier}
 }
 ```
